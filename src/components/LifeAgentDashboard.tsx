@@ -354,12 +354,6 @@ const LifeAgentDashboard = () => {
                         color: "text-accent-warm"
                       },
                       {
-                        icon: Activity,
-                        title: "5 PM CrossFit",
-                        status: "pending",
-                        color: "text-accent-success"
-                      },
-                      {
                         icon: Heart,
                         title: "8 PM Jessica's breakup party",
                         status: "pending",
