@@ -148,7 +148,7 @@ const LifeAgentDashboard = () => {
       },
       {
         icon: Zap,
-        title: "1 hour strength training",
+        title: "1 hour Crossfit",
         subtitle: "Weight lifting",
         status: "pending",
         color: "text-purple-400"
@@ -522,7 +522,7 @@ const LifeAgentDashboard = () => {
                 <p className="text-sm text-muted-foreground">Curated casual games to relax anytime</p>
               </div>
               
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-4">
                 {[
                   {
                     name: "Sudoku",
@@ -587,36 +587,20 @@ const LifeAgentDashboard = () => {
                     players: "4.5k",
                     color: "text-orange-400",
                     bgColor: "bg-orange-400/10"
-                  },
-                  {
-                    name: "Match 3",
-                    icon: Sparkles,
-                    description: "Classic match-3 puzzle game",
-                    players: "2.9k",
-                    color: "text-indigo-400",
-                    bgColor: "bg-indigo-400/10"
-                  },
-                  {
-                    name: "Pull the Pin",
-                    icon: Pin,
-                    description: "Pin-pulling puzzle adventure",
-                    players: "1.4k",
-                    color: "text-teal-400",
-                    bgColor: "bg-teal-400/10"
                   }
                 ].map((game, index) => (
                   <Card key={index} className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass hover:shadow-glow transition-all duration-300 cursor-pointer group">
-                    <CardContent className="p-3 text-center">
-                      <div className={`w-10 h-10 mx-auto mb-2 rounded-lg ${game.bgColor} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                        <game.icon className={`h-5 w-5 ${game.color}`} />
+                    <CardContent className="p-4 text-center h-full flex flex-col">
+                      <div className={`w-12 h-12 mx-auto mb-3 rounded-lg ${game.bgColor} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                        <game.icon className={`h-6 w-6 ${game.color}`} />
                       </div>
-                      <h3 className="font-semibold text-card-foreground mb-1 text-xs leading-tight">{game.name}</h3>
-                      <p className="text-xs text-muted-foreground mb-2 leading-relaxed line-clamp-2">{game.description}</p>
-                      <div className="flex items-center justify-center gap-1 mb-2">
+                      <h3 className="font-semibold text-card-foreground mb-2 text-sm leading-tight">{game.name}</h3>
+                      <p className="text-xs text-muted-foreground mb-3 leading-relaxed line-clamp-2 flex-1">{game.description}</p>
+                      <div className="flex items-center justify-center gap-1 mb-3">
                         <div className="w-1.5 h-1.5 bg-accent-success rounded-full animate-pulse"></div>
                         <span className="text-xs text-accent-success font-medium">{game.players} online</span>
                       </div>
-                      <Button size="sm" className="w-full h-7 text-xs transition-smooth group-hover:shadow-glow">
+                      <Button size="sm" className="w-full h-8 text-xs transition-smooth group-hover:shadow-glow">
                         Start Game
                       </Button>
                     </CardContent>
