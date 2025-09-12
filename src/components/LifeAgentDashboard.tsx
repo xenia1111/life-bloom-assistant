@@ -239,8 +239,8 @@ const LifeAgentDashboard = () => {
               </AvatarFallback>
             </Avatar>
             <div>
-              <h2 className="text-2xl font-semibold text-foreground">Username</h2>
-              <p className="text-muted-foreground">Life Agent User</p>
+              <h2 className="text-2xl font-semibold text-foreground">Winnie</h2>
+              <p className="text-muted-foreground">Monster AI has been with you for 125 days</p>
               <Badge className="mt-2 bg-accent-warm/20 text-accent-warm">Premium Member</Badge>
             </div>
           </div>
