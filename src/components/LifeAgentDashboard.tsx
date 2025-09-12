@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Bot, Calendar, Heart, Target, Gamepad2, Moon, Droplet, User, Activity, Coffee, BookOpen, Grid3X3, Palette, Hash, Puzzle, Zap, FlaskConical, Baby, Star, Sparkles, Pin } from "lucide-react";
+import { Bot, Calendar, Heart, Target, Gamepad2, Moon, Droplet, User, Activity, Coffee, BookOpen, Grid3X3, Palette, Hash, Puzzle, Zap, FlaskConical, Baby, Star, Sparkles, Pin, Shield, Camera, CreditCard, MapPin, Scale } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -492,6 +492,48 @@ const LifeAgentDashboard = () => {
                     color: "text-purple-400",
                     bgColor: "bg-purple-400/10",
                     apps: ["Fortune", "Tarot"]
+                  },
+                  {
+                    title: "Password Vault",
+                    icon: Shield,
+                    color: "text-red-400",
+                    bgColor: "bg-red-400/10",
+                    apps: ["Security", "Keys"]
+                  },
+                  {
+                    title: "Filter Queen",
+                    icon: Camera,
+                    color: "text-pink-400",
+                    bgColor: "bg-pink-400/10",
+                    apps: ["Beauty", "Photo"]
+                  },
+                  {
+                    title: "Bill Manager",
+                    icon: CreditCard,
+                    color: "text-green-400",
+                    bgColor: "bg-green-400/10",
+                    apps: ["Finance", "Budget"]
+                  },
+                  {
+                    title: "Period Tracker",
+                    icon: Heart,
+                    color: "text-rose-400",
+                    bgColor: "bg-rose-400/10",
+                    apps: ["Health", "Cycle"]
+                  },
+                  {
+                    title: "Bathroom Finder",
+                    icon: MapPin,
+                    color: "text-teal-400",
+                    bgColor: "bg-teal-400/10",
+                    apps: ["Location", "Map"]
+                  },
+                  {
+                    title: "Weight Diary",
+                    icon: Scale,
+                    color: "text-indigo-400",
+                    bgColor: "bg-indigo-400/10",
+                    apps: ["Track", "Progress"]
                   }
                 ].map((category, index) => (
                   <Card key={index} className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass hover:shadow-glow transition-all duration-300 cursor-pointer group">
