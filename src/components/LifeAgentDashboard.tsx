@@ -26,10 +26,10 @@ const LifeAgentDashboard = () => {
             </div>
             <div>
               <h2 className="text-2xl font-semibold text-foreground mb-2">
-                Winnie，今天看起来不错！
+                Winnie, looking great today!
               </h2>
               <p className="text-muted-foreground">
-                起床比平时早了5分钟，又开启了元气满满的一天！
+                Woke up 5 minutes earlier than usual, starting another energetic day!
               </p>
             </div>
           </div>
@@ -46,29 +46,29 @@ const LifeAgentDashboard = () => {
     const todoItems = [
       {
         icon: Target,
-        title: "11点去Trader Joe's",
-        subtitle: "购物清单准备",
+        title: "11 AM to Trader Joe's",
+        subtitle: "Shopping list ready",
         status: "pending",
         color: "text-primary"
       },
       {
         icon: Coffee,
-        title: "15点去Devoción和同学开组会",
-        subtitle: "项目讨论会议",
+        title: "3 PM Group meeting at Devoción",
+        subtitle: "Project discussion",
         status: "pending", 
         color: "text-accent-warm"
       },
       {
         icon: Activity,
-        title: "17点去CrossFit",
-        subtitle: "健身训练",
+        title: "5 PM CrossFit",
+        subtitle: "Fitness training",
         status: "completed",
         color: "text-accent-success"
       },
       {
         icon: Heart,
-        title: "20点去Jessica的分手Party",
-        subtitle: "陪伴朋友",
+        title: "8 PM Jessica's breakup party",
+        subtitle: "Support friend",
         status: "pending",
         color: "text-red-400"
       }
@@ -77,22 +77,22 @@ const LifeAgentDashboard = () => {
     const healthItems = [
       {
         icon: Droplet,
-        title: "游泳2000米",
-        subtitle: "有氧运动",
+        title: "Swim 2000 meters",
+        subtitle: "Cardio exercise",
         status: "completed",
         color: "text-blue-400"
       },
       {
         icon: Coffee,
-        title: "喝8杯水",
-        subtitle: "保持水分",
+        title: "Drink 8 cups of water",
+        subtitle: "Stay hydrated",
         status: "pending",
         color: "text-cyan-400"
       },
       {
         icon: Zap,
-        title: "无氧1小时",
-        subtitle: "力量训练",
+        title: "1 hour strength training",
+        subtitle: "Weight lifting",
         status: "pending",
         color: "text-purple-400"
       }
@@ -111,7 +111,7 @@ const LifeAgentDashboard = () => {
                 variant={item.status === "completed" ? "default" : "secondary"}
                 className={`text-xs ${item.status === "completed" ? "bg-accent-success/20 text-accent-success" : ""}`}
               >
-                {item.status === "completed" ? "完成" : "待办"}
+                {item.status === "completed" ? "Done" : "Pending"}
               </Badge>
             </CardContent>
           </Card>
@@ -122,11 +122,11 @@ const LifeAgentDashboard = () => {
     return (
       <div className="space-y-8">
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-4">今日TODO</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-4">Today's TODO</h3>
           {renderItems(todoItems)}
         </div>
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-4">今日健康</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-4">Today's Health</h3>
           {renderItems(healthItems)}
         </div>
       </div>
@@ -237,9 +237,9 @@ const LifeAgentDashboard = () => {
               </AvatarFallback>
             </Avatar>
             <div>
-              <h2 className="text-2xl font-semibold text-foreground">用户名</h2>
-              <p className="text-muted-foreground">Life Agent 用户</p>
-              <Badge className="mt-2 bg-accent-warm/20 text-accent-warm">高级会员</Badge>
+              <h2 className="text-2xl font-semibold text-foreground">Username</h2>
+              <p className="text-muted-foreground">Life Agent User</p>
+              <Badge className="mt-2 bg-accent-warm/20 text-accent-warm">Premium Member</Badge>
             </div>
           </div>
         </CardContent>
@@ -248,16 +248,16 @@ const LifeAgentDashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Card className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass">
           <CardContent className="p-6">
-            <h3 className="font-semibold mb-4 text-card-foreground">账户设置</h3>
+            <h3 className="font-semibold mb-4 text-card-foreground">Account Settings</h3>
             <div className="space-y-3">
               <Button variant="ghost" className="w-full justify-start">
-                个人信息
+                Personal Info
               </Button>
               <Button variant="ghost" className="w-full justify-start">
-                隐私设置
+                Privacy Settings
               </Button>
               <Button variant="ghost" className="w-full justify-start">
-                通知设置
+                Notification Settings
               </Button>
             </div>
           </CardContent>
@@ -265,16 +265,16 @@ const LifeAgentDashboard = () => {
 
         <Card className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass">
           <CardContent className="p-6">
-            <h3 className="font-semibold mb-4 text-card-foreground">权限管理</h3>
+            <h3 className="font-semibold mb-4 text-card-foreground">Permission Management</h3>
             <div className="space-y-3">
               <Button variant="ghost" className="w-full justify-start">
-                数据权限
+                Data Permissions
               </Button>
               <Button variant="ghost" className="w-full justify-start">
-                应用权限
+                App Permissions
               </Button>
               <Button variant="ghost" className="w-full justify-start">
-                分享设置
+                Sharing Settings
               </Button>
             </div>
           </CardContent>
@@ -289,16 +289,16 @@ const LifeAgentDashboard = () => {
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-4 bg-glass-subtle backdrop-blur-glass border border-glass-border">
             <TabsTrigger value="dashboard" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
-              主页
+              Home
             </TabsTrigger>
             <TabsTrigger value="entertainment" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
-              娱乐
+              Entertainment
             </TabsTrigger>
             <TabsTrigger value="health" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
-              健康
+              Health
             </TabsTrigger>
             <TabsTrigger value="profile" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
-              我的
+              Profile
             </TabsTrigger>
           </TabsList>
 
@@ -308,13 +308,13 @@ const LifeAgentDashboard = () => {
             
             {/* 打卡模块 */}
             <div>
-              <h2 className="text-xl font-semibold text-foreground mb-4">今日待办</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-4">Today's Tasks</h2>
               <CheckInModule />
             </div>
 
             {/* 应用分类模块 */}
             <div>
-              <h2 className="text-xl font-semibold text-foreground mb-4">应用中心</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-4">App Center</h2>
               <AppCategories />
             </div>
           </TabsContent>
@@ -323,8 +323,8 @@ const LifeAgentDashboard = () => {
             <div className="space-y-6">
               <div className="text-center mb-8">
                 <Gamepad2 className="h-12 w-12 mx-auto mb-4 text-accent-warm" />
-                <h2 className="text-2xl font-semibold text-foreground mb-2">娱乐中心</h2>
-                <p className="text-muted-foreground">精选休闲游戏，随时放松心情</p>
+                <h2 className="text-2xl font-semibold text-foreground mb-2">Entertainment Center</h2>
+                <p className="text-muted-foreground">Curated casual games to relax anytime</p>
               </div>
               
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -332,7 +332,7 @@ const LifeAgentDashboard = () => {
                   {
                     name: "Sudoku",
                     icon: Grid3X3,
-                    description: "经典数字逻辑推理游戏",
+                    description: "Classic number logic puzzle game",
                     players: "2.3k",
                     color: "text-blue-400",
                     bgColor: "bg-blue-400/10"
@@ -340,7 +340,7 @@ const LifeAgentDashboard = () => {
                   {
                     name: "Color Switch",
                     icon: Palette,
-                    description: "考验反应的色彩挑战",
+                    description: "Color reaction challenge game",
                     players: "1.8k",
                     color: "text-purple-400",
                     bgColor: "bg-purple-400/10"
@@ -348,7 +348,7 @@ const LifeAgentDashboard = () => {
                   {
                     name: "Wordle",
                     icon: Hash,
-                    description: "每日一词猜字游戏",
+                    description: "Daily word guessing game",
                     players: "5.2k",
                     color: "text-green-400",
                     bgColor: "bg-green-400/10"
@@ -356,7 +356,7 @@ const LifeAgentDashboard = () => {
                   {
                     name: "Crossword",
                     icon: BookOpen,
-                    description: "经典填字谜题挑战",
+                    description: "Classic crossword puzzle challenge",
                     players: "1.5k",
                     color: "text-yellow-400",
                     bgColor: "bg-yellow-400/10"
@@ -364,7 +364,7 @@ const LifeAgentDashboard = () => {
                   {
                     name: "Block Puzzle",
                     icon: Puzzle,
-                    description: "方块拼图消除游戏",
+                    description: "Block puzzle elimination game",
                     players: "3.1k",
                     color: "text-red-400",
                     bgColor: "bg-red-400/10"
@@ -372,7 +372,7 @@ const LifeAgentDashboard = () => {
                   {
                     name: "Water Sort",
                     icon: FlaskConical,
-                    description: "色彩倒水排序谜题",
+                    description: "Color water sorting puzzle",
                     players: "2.7k",
                     color: "text-cyan-400",
                     bgColor: "bg-cyan-400/10"
@@ -380,7 +380,7 @@ const LifeAgentDashboard = () => {
                   {
                     name: "Daycare Tycoon",
                     icon: Baby,
-                    description: "经营模拟托儿所游戏",
+                    description: "Daycare business simulation game",
                     players: "956",
                     color: "text-pink-400",
                     bgColor: "bg-pink-400/10"
@@ -388,7 +388,7 @@ const LifeAgentDashboard = () => {
                   {
                     name: "Sheep a Sheep",
                     icon: Star,
-                    description: "萌系三层消除挑战",
+                    description: "Cute three-layer elimination challenge",
                     players: "4.5k",
                     color: "text-orange-400",
                     bgColor: "bg-orange-400/10"
@@ -396,7 +396,7 @@ const LifeAgentDashboard = () => {
                   {
                     name: "Match 3",
                     icon: Sparkles,
-                    description: "经典三连消消乐",
+                    description: "Classic match-3 puzzle game",
                     players: "2.9k",
                     color: "text-indigo-400",
                     bgColor: "bg-indigo-400/10"
@@ -404,7 +404,7 @@ const LifeAgentDashboard = () => {
                   {
                     name: "Pull the Pin",
                     icon: Pin,
-                    description: "解谜取钉子闯关游戏",
+                    description: "Pin-pulling puzzle adventure",
                     players: "1.4k",
                     color: "text-teal-400",
                     bgColor: "bg-teal-400/10"
@@ -419,10 +419,10 @@ const LifeAgentDashboard = () => {
                       <p className="text-xs text-muted-foreground mb-3 leading-relaxed">{game.description}</p>
                       <div className="flex items-center justify-center gap-1">
                         <div className="w-2 h-2 bg-accent-success rounded-full animate-pulse"></div>
-                        <span className="text-xs text-accent-success font-medium">{game.players} 在线</span>
+                        <span className="text-xs text-accent-success font-medium">{game.players} online</span>
                       </div>
                       <Button size="sm" className="w-full mt-3 h-8 text-xs transition-smooth group-hover:shadow-glow">
-                        开始游戏
+                        Start Game
                       </Button>
                     </CardContent>
                   </Card>
@@ -434,8 +434,8 @@ const LifeAgentDashboard = () => {
           <TabsContent value="health" className="mt-8">
             <div className="text-center py-12">
               <Heart className="h-16 w-16 mx-auto mb-4 text-accent-success" />
-              <h2 className="text-2xl font-semibold text-foreground mb-2">健康中心</h2>
-              <p className="text-muted-foreground">健康管理功能正在开发中</p>
+              <h2 className="text-2xl font-semibold text-foreground mb-2">Health Center</h2>
+              <p className="text-muted-foreground">Health management features coming soon</p>
             </div>
           </TabsContent>
 
