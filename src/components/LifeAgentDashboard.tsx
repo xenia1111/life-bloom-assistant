@@ -46,29 +46,57 @@ const LifeAgentDashboard = () => {
     const checkInItems = [
       {
         icon: Target,
-        title: "今日TODO",
-        subtitle: "11点去Trader Joe's, 15点去Devoción和同学开组会, 17点去CrossFit, 20点去Jessica的分手Party",
+        title: "11点去Trader Joe's",
+        subtitle: "购物清单准备",
         status: "pending",
         color: "text-primary"
       },
       {
-        icon: Heart,
-        title: "今日健康",
-        subtitle: "游泳2000米, 喝8杯水, 无氧1小时",
+        icon: Coffee,
+        title: "15点去Devoción和同学开组会",
+        subtitle: "项目讨论会议",
+        status: "pending", 
+        color: "text-accent-warm"
+      },
+      {
+        icon: Activity,
+        title: "17点去CrossFit",
+        subtitle: "健身训练",
         status: "completed",
         color: "text-accent-success"
       },
       {
-        icon: Target,
-        title: "今日目标",
-        subtitle: "设定3个重要任务",
+        icon: Heart,
+        title: "20点去Jessica的分手Party",
+        subtitle: "陪伴朋友",
         status: "pending",
-        color: "text-primary"
+        color: "text-red-400"
+      },
+      {
+        icon: Droplet,
+        title: "游泳2000米",
+        subtitle: "有氧运动",
+        status: "completed",
+        color: "text-blue-400"
+      },
+      {
+        icon: Coffee,
+        title: "喝8杯水",
+        subtitle: "保持水分",
+        status: "pending",
+        color: "text-cyan-400"
+      },
+      {
+        icon: Zap,
+        title: "无氧1小时",
+        subtitle: "力量训练",
+        status: "pending",
+        color: "text-purple-400"
       }
     ];
 
     return (
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {checkInItems.map((item, index) => (
           <Card key={index} className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass hover:shadow-glow transition-all duration-300 cursor-pointer group">
             <CardContent className="p-4">
