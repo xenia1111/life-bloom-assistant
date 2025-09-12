@@ -26,7 +26,7 @@ const LifeAgentDashboard = () => {
             </div>
             <div>
               <h2 className="text-2xl font-semibold text-foreground mb-2">
-                Winnie, looking great today!
+                <span className="text-accent-success">Winnie</span>, looking great today!
               </h2>
               <p className="text-muted-foreground">
                 Woke up 5 minutes earlier than usual, starting another energetic day!
