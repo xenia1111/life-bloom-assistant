@@ -323,7 +323,7 @@ const LifeAgentDashboard = () => {
                       <span className="text-accent-success">Winnie</span>, looking great today!
                     </h2>
                     <p className="text-sm text-muted-foreground">
-                      Woke up 5 minutes earlier than usual, starting another energetic day!
+                      Accidentally woke up 5 mins early, but ngl I feel unstoppable rn 😎☀️
                     </p>
                   </div>
                   <Badge variant="secondary" className="bg-accent-warm/10 text-accent-warm border-accent-warm/20 text-xs">
