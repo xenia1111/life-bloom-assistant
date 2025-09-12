@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Bot, Calendar, Heart, Target, Gamepad2, Moon, Droplet, User, Activity, Coffee, BookOpen } from "lucide-react";
+import { Bot, Calendar, Heart, Target, Gamepad2, Moon, Droplet, User, Activity, Coffee, BookOpen, Grid3X3, Palette, Hash, Puzzle, Zap, FlaskConical, Baby, Star, Sparkles, Pin } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -290,10 +290,114 @@ const LifeAgentDashboard = () => {
           </TabsContent>
 
           <TabsContent value="entertainment" className="mt-8">
-            <div className="text-center py-12">
-              <Gamepad2 className="h-16 w-16 mx-auto mb-4 text-accent-warm" />
-              <h2 className="text-2xl font-semibold text-foreground mb-2">娱乐中心</h2>
-              <p className="text-muted-foreground">即点即用的娱乐应用正在开发中</p>
+            <div className="space-y-6">
+              <div className="text-center mb-8">
+                <Gamepad2 className="h-12 w-12 mx-auto mb-4 text-accent-warm" />
+                <h2 className="text-2xl font-semibold text-foreground mb-2">娱乐中心</h2>
+                <p className="text-muted-foreground">精选休闲游戏，随时放松心情</p>
+              </div>
+              
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                {[
+                  {
+                    name: "Sudoku",
+                    icon: Grid3X3,
+                    description: "经典数字逻辑推理游戏",
+                    players: "2.3k",
+                    color: "text-blue-400",
+                    bgColor: "bg-blue-400/10"
+                  },
+                  {
+                    name: "Color Switch",
+                    icon: Palette,
+                    description: "考验反应的色彩挑战",
+                    players: "1.8k",
+                    color: "text-purple-400",
+                    bgColor: "bg-purple-400/10"
+                  },
+                  {
+                    name: "Wordle",
+                    icon: Hash,
+                    description: "每日一词猜字游戏",
+                    players: "5.2k",
+                    color: "text-green-400",
+                    bgColor: "bg-green-400/10"
+                  },
+                  {
+                    name: "Crossword",
+                    icon: BookOpen,
+                    description: "经典填字谜题挑战",
+                    players: "1.5k",
+                    color: "text-yellow-400",
+                    bgColor: "bg-yellow-400/10"
+                  },
+                  {
+                    name: "Block Puzzle",
+                    icon: Puzzle,
+                    description: "方块拼图消除游戏",
+                    players: "3.1k",
+                    color: "text-red-400",
+                    bgColor: "bg-red-400/10"
+                  },
+                  {
+                    name: "Water Sort",
+                    icon: FlaskConical,
+                    description: "色彩倒水排序谜题",
+                    players: "2.7k",
+                    color: "text-cyan-400",
+                    bgColor: "bg-cyan-400/10"
+                  },
+                  {
+                    name: "Daycare Tycoon",
+                    icon: Baby,
+                    description: "经营模拟托儿所游戏",
+                    players: "956",
+                    color: "text-pink-400",
+                    bgColor: "bg-pink-400/10"
+                  },
+                  {
+                    name: "Sheep a Sheep",
+                    icon: Star,
+                    description: "萌系三层消除挑战",
+                    players: "4.5k",
+                    color: "text-orange-400",
+                    bgColor: "bg-orange-400/10"
+                  },
+                  {
+                    name: "Match 3",
+                    icon: Sparkles,
+                    description: "经典三连消消乐",
+                    players: "2.9k",
+                    color: "text-indigo-400",
+                    bgColor: "bg-indigo-400/10"
+                  },
+                  {
+                    name: "Pull the Pin",
+                    icon: Pin,
+                    description: "解谜取钉子闯关游戏",
+                    players: "1.4k",
+                    color: "text-teal-400",
+                    bgColor: "bg-teal-400/10"
+                  }
+                ].map((game, index) => (
+                  <Card key={index} className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass hover:shadow-glow transition-all duration-300 cursor-pointer group">
+                    <CardContent className="p-4 text-center">
+                      <div className={`w-12 h-12 mx-auto mb-3 rounded-lg ${game.bgColor} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                        <game.icon className={`h-6 w-6 ${game.color}`} />
+                      </div>
+                      <h3 className="font-semibold text-card-foreground mb-1 text-sm">{game.name}</h3>
+                      <p className="text-xs text-muted-foreground mb-3 leading-relaxed">{game.description}</p>
+                      <div className="flex items-center justify-center gap-1">
+                        <div className="w-2 h-2 bg-accent-success rounded-full animate-pulse"></div>
+                        <span className="text-xs text-accent-success font-medium">{game.players} 在线</span>
+                      </div>
+                      <Button size="sm" className="w-full mt-3 h-8 text-xs transition-smooth group-hover:shadow-glow">
+                        开始游戏
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </TabsContent>
 
