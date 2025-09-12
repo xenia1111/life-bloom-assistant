@@ -26,15 +26,15 @@ const LifeAgentDashboard = () => {
             </div>
             <div>
               <h2 className="text-2xl font-semibold text-foreground mb-2">
-                今天看起来不错！
+                Winnie，今天看起来不错！
               </h2>
               <p className="text-muted-foreground">
-                起床比平时早了5分钟，精神状态很棒～
+                起床比平时早了5分钟，又开启了元气满满的一天！
               </p>
             </div>
           </div>
           <Badge variant="secondary" className="bg-accent-warm/10 text-accent-warm border-accent-warm/20">
-            AI助手
+            Your Monster
           </Badge>
         </div>
       </CardContent>
