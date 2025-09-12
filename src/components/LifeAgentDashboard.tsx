@@ -48,21 +48,21 @@ const LifeAgentDashboard = () => {
         icon: Target,
         title: "11 AM to Trader Joe's",
         subtitle: "Shopping list ready",
-        status: "pending",
+        status: "completed",
         color: "text-primary"
       },
       {
         icon: Coffee,
         title: "3 PM Group meeting at Devoción",
         subtitle: "Project discussion",
-        status: "pending", 
+        status: "completed", 
         color: "text-accent-warm"
       },
       {
         icon: Activity,
         title: "5 PM CrossFit",
         subtitle: "Fitness training",
-        status: "completed",
+        status: "pending",
         color: "text-accent-success"
       },
       {
@@ -113,7 +113,7 @@ const LifeAgentDashboard = () => {
                 variant={item.status === "completed" ? "default" : "secondary"}
                 className={`text-xs ${item.status === "completed" ? "bg-accent-success/20 text-accent-success" : ""}`}
               >
-                {item.status === "completed" ? "Done" : "Pending"}
+                {item.status === "completed" ? "Done" : "TBD"}
               </Badge>
             </CardContent>
           </Card>
