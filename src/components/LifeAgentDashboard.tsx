@@ -43,7 +43,7 @@ const LifeAgentDashboard = () => {
 
   // 打卡模块
   const CheckInModule = () => {
-    const checkInItems = [
+    const todoItems = [
       {
         icon: Target,
         title: "11点去Trader Joe's",
@@ -71,7 +71,10 @@ const LifeAgentDashboard = () => {
         subtitle: "陪伴朋友",
         status: "pending",
         color: "text-red-400"
-      },
+      }
+    ];
+
+    const healthItems = [
       {
         icon: Droplet,
         title: "游泳2000米",
@@ -95,9 +98,9 @@ const LifeAgentDashboard = () => {
       }
     ];
 
-    return (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        {checkInItems.map((item, index) => (
+    const renderItems = (items) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {items.map((item, index) => (
           <Card key={index} className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass hover:shadow-glow transition-all duration-300 cursor-pointer group">
             <CardContent className="p-4">
               <div className="flex items-center gap-3 mb-3">
@@ -127,6 +130,19 @@ const LifeAgentDashboard = () => {
             </CardContent>
           </Card>
         ))}
+      </div>
+    );
+
+    return (
+      <div className="space-y-8">
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-4">今日TODO</h3>
+          {renderItems(todoItems)}
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-4">今日健康</h3>
+          {renderItems(healthItems)}
+        </div>
       </div>
     );
   };
