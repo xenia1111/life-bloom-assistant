@@ -99,14 +99,16 @@ const LifeAgentDashboard = () => {
     ];
 
     const renderItems = (items) => (
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div className="space-y-3">
         {items.map((item, index) => (
           <Card key={index} className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass hover:shadow-glow transition-all duration-300 cursor-pointer group">
-            <CardContent className="p-3 text-center">
-              <div className={`w-8 h-8 mx-auto mb-2 rounded-lg bg-glass-subtle ${item.color} flex items-center justify-center`}>
+            <CardContent className="p-3 flex items-center gap-3">
+              <div className={`w-8 h-8 rounded-lg bg-glass-subtle ${item.color} flex items-center justify-center flex-shrink-0`}>
                 <item.icon className="h-4 w-4" />
               </div>
-              <h3 className="font-medium text-card-foreground text-xs mb-1 leading-tight">{item.title}</h3>
+              <div className="flex-1">
+                <h3 className="font-medium text-card-foreground text-sm leading-tight">{item.title}</h3>
+              </div>
               <Badge 
                 variant={item.status === "completed" ? "default" : "secondary"}
                 className={`text-xs ${item.status === "completed" ? "bg-accent-success/20 text-accent-success" : ""}`}
@@ -120,7 +122,7 @@ const LifeAgentDashboard = () => {
     );
 
     return (
-      <div className="space-y-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-4">Today's TODO</h3>
           {renderItems(todoItems)}
