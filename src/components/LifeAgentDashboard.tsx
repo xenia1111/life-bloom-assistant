@@ -398,7 +398,7 @@ const LifeAgentDashboard = () => {
                       },
                       {
                         icon: Zap,
-                        title: "1 hour strength training",
+                        title: "1 hour Crossfit",
                         status: "pending",
                         color: "text-purple-400"
                       }
