@@ -45,18 +45,18 @@ const LifeAgentDashboard = () => {
   const CheckInModule = () => {
     const checkInItems = [
       {
-        icon: Heart,
-        title: "今日心情",
-        subtitle: "记录一下今天的感受",
+        icon: Target,
+        title: "今日TODO",
+        subtitle: "11点去Trader Joe's, 15点去Devoción和同学开组会, 17点去CrossFit, 20点去Jessica的分手Party",
         status: "pending",
-        color: "text-red-400"
+        color: "text-primary"
       },
       {
-        icon: Coffee,
-        title: "晨间咖啡",
-        subtitle: "第一杯咖啡时间",
+        icon: Heart,
+        title: "今日健康",
+        subtitle: "游泳2000米, 喝8杯水, 无氧1小时",
         status: "completed",
-        color: "text-accent-warm"
+        color: "text-accent-success"
       },
       {
         icon: Target,
