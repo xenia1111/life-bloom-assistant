@@ -99,34 +99,20 @@ const LifeAgentDashboard = () => {
     ];
 
     const renderItems = (items) => (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         {items.map((item, index) => (
           <Card key={index} className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass hover:shadow-glow transition-all duration-300 cursor-pointer group">
-            <CardContent className="p-4">
-              <div className="flex items-center gap-3 mb-3">
-                <div className={`p-2 rounded-lg bg-glass-subtle ${item.color}`}>
-                  <item.icon className="h-5 w-5" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-medium text-card-foreground">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.subtitle}</p>
-                </div>
+            <CardContent className="p-3 text-center">
+              <div className={`w-8 h-8 mx-auto mb-2 rounded-lg bg-glass-subtle ${item.color} flex items-center justify-center`}>
+                <item.icon className="h-4 w-4" />
               </div>
-              <div className="flex justify-between items-center">
-                <Badge 
-                  variant={item.status === "completed" ? "default" : "secondary"}
-                  className={item.status === "completed" ? "bg-accent-success/20 text-accent-success" : ""}
-                >
-                  {item.status === "completed" ? "已完成" : "待打卡"}
-                </Badge>
-                <Button 
-                  size="sm" 
-                  variant={item.status === "completed" ? "ghost" : "default"}
-                  className="h-8 px-3 transition-smooth group-hover:shadow-glow"
-                >
-                  {item.status === "completed" ? "查看" : "打卡"}
-                </Button>
-              </div>
+              <h3 className="font-medium text-card-foreground text-xs mb-1 leading-tight">{item.title}</h3>
+              <Badge 
+                variant={item.status === "completed" ? "default" : "secondary"}
+                className={`text-xs ${item.status === "completed" ? "bg-accent-success/20 text-accent-success" : ""}`}
+              >
+                {item.status === "completed" ? "完成" : "待办"}
+              </Badge>
             </CardContent>
           </Card>
         ))}
