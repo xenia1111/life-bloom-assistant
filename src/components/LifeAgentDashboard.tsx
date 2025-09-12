@@ -17,7 +17,7 @@ const LifeAgentDashboard = () => {
           <div className="flex items-center gap-4">
             <div className="relative">
               <Avatar className="h-16 w-16 ring-2 ring-primary/20">
-                <AvatarImage src="/placeholder.svg" />
+                <AvatarImage src="/lovable-uploads/df6a1543-d8f4-49ae-8e81-a4ecb8be5836.png" />
                 <AvatarFallback className="bg-gradient-primary text-primary-foreground">
                   <Bot className="h-8 w-8" />
                 </AvatarFallback>
@@ -231,7 +231,7 @@ const LifeAgentDashboard = () => {
         <CardContent className="p-6">
           <div className="flex items-center gap-4 mb-6">
             <Avatar className="h-20 w-20 ring-4 ring-primary/20">
-              <AvatarImage src="/placeholder.svg" />
+              <AvatarImage src="/lovable-uploads/df6a1543-d8f4-49ae-8e81-a4ecb8be5836.png" />
               <AvatarFallback className="bg-gradient-primary text-primary-foreground text-2xl">
                 U
               </AvatarFallback>
