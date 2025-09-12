@@ -383,9 +383,6 @@ const LifeAgentDashboard = () => {
                       Accidentally woke up 5 mins early, but ngl I feel unstoppable rn 😎☀️
                     </p>
                   </div>
-                  <Badge variant="secondary" className="bg-accent-warm/10 text-accent-warm border-accent-warm/20 text-xs">
-                    Your Monster
-                  </Badge>
                 </div>
               </CardContent>
             </Card>
