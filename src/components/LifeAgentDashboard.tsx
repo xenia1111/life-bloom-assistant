@@ -107,67 +107,67 @@ const LifeAgentDashboard = () => {
   const AppCategories = () => {
     const categories = [
       {
-        title: "即点即用娱乐",
-        icon: Gamepad2,
+        title: "卡路里管理",
+        icon: Zap,
         color: "text-accent-warm",
         bgColor: "bg-accent-warm/10",
-        apps: ["音乐", "视频", "游戏"]
+        apps: ["热量", "营养", "记录"]
       },
       {
-        title: "减重专区",
+        title: "体重稳定器",
         icon: Activity,
         color: "text-accent-success",
         bgColor: "bg-accent-success/10",
-        apps: ["运动", "饮食", "体重"]
+        apps: ["体重", "目标", "趋势"]
       },
       {
-        title: "睡眠专区",
+        title: "睡眠追踪",
         icon: Moon,
         color: "text-primary",
         bgColor: "bg-primary/10",
-        apps: ["睡眠", "冥想", "放松"]
+        apps: ["睡眠", "质量", "分析"]
       },
       {
-        title: "控糖专区",
+        title: "控糖大师",
         icon: Droplet,
         color: "text-accent-warning",
         bgColor: "bg-accent-warning/10",
-        apps: ["血糖", "饮食", "运动"]
-      },
-      {
-        title: "学习成长",
-        icon: BookOpen,
-        color: "text-purple-400",
-        bgColor: "bg-purple-400/10",
-        apps: ["阅读", "课程", "笔记"]
-      },
-      {
-        title: "健康监测",
-        icon: Heart,
-        color: "text-red-400",
-        bgColor: "bg-red-400/10",
-        apps: ["心率", "血压", "体温"]
+        apps: ["血糖", "监测", "提醒"]
       },
       {
         title: "时间管理",
         icon: Calendar,
         color: "text-blue-400",
         bgColor: "bg-blue-400/10",
-        apps: ["日程", "提醒", "计时"]
+        apps: ["计划", "专注", "效率"]
       },
       {
-        title: "情绪管理",
-        icon: Bot,
+        title: "运势占卜",
+        icon: Star,
+        color: "text-purple-400",
+        bgColor: "bg-purple-400/10",
+        apps: ["运势", "塔罗", "星座"]
+      },
+      {
+        title: "Widget专家",
+        icon: Grid3X3,
         color: "text-green-400",
         bgColor: "bg-green-400/10",
-        apps: ["日记", "情绪", "分析"]
+        apps: ["小组件", "桌面", "自定义"]
       },
       {
-        title: "个人主页",
-        icon: User,
-        color: "text-muted-foreground",
-        bgColor: "bg-muted/10",
-        apps: ["设置", "权限", "个人信息"]
+        title: "文件转换",
+        icon: Target,
+        color: "text-cyan-400",
+        bgColor: "bg-cyan-400/10",
+        apps: ["格式", "转换", "工具"]
+      },
+      {
+        title: "学习不累",
+        icon: BookOpen,
+        color: "text-red-400",
+        bgColor: "bg-red-400/10",
+        apps: ["学习", "记忆", "方法"]
       }
     ];
 
