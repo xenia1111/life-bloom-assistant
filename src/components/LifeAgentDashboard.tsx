@@ -297,7 +297,7 @@ const LifeAgentDashboard = () => {
               Entertainment
             </TabsTrigger>
             <TabsTrigger value="health" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
-              Health
+              Global Rank
             </TabsTrigger>
             <TabsTrigger value="profile" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
               Profile
@@ -434,10 +434,189 @@ const LifeAgentDashboard = () => {
           </TabsContent>
 
           <TabsContent value="health" className="mt-8">
-            <div className="text-center py-12">
-              <Heart className="h-16 w-16 mx-auto mb-4 text-accent-success" />
-              <h2 className="text-2xl font-semibold text-foreground mb-2">Health Center</h2>
-              <p className="text-muted-foreground">Health management features coming soon</p>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {/* Global Game Ranking */}
+              <div>
+                <h3 className="text-xl font-semibold text-foreground mb-4">Global Game Ranking</h3>
+                <div className="space-y-3">
+                  {[
+                    {
+                      name: "Sudoku",
+                      icon: Grid3X3,
+                      highScore: "2,450",
+                      globalRank: "#1,234",
+                      color: "text-blue-400",
+                      bgColor: "bg-blue-400/10"
+                    },
+                    {
+                      name: "Wordle",
+                      icon: Hash,
+                      highScore: "48 Streak",
+                      globalRank: "#567",
+                      color: "text-green-400",
+                      bgColor: "bg-green-400/10"
+                    },
+                    {
+                      name: "Block Puzzle",
+                      icon: Puzzle,
+                      highScore: "18,920",
+                      globalRank: "#2,891",
+                      color: "text-red-400",
+                      bgColor: "bg-red-400/10"
+                    },
+                    {
+                      name: "Water Sort",
+                      icon: FlaskConical,
+                      highScore: "Level 124",
+                      globalRank: "#445",
+                      color: "text-cyan-400",
+                      bgColor: "bg-cyan-400/10"
+                    },
+                    {
+                      name: "Match 3",
+                      icon: Sparkles,
+                      highScore: "89,450",
+                      globalRank: "#3,201",
+                      color: "text-indigo-400",
+                      bgColor: "bg-indigo-400/10"
+                    }
+                  ].map((game, index) => (
+                    <Card key={index} className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass">
+                      <CardContent className="p-4">
+                        <div className="flex items-center gap-3">
+                          <div className={`w-10 h-10 rounded-lg ${game.bgColor} flex items-center justify-center`}>
+                            <game.icon className={`h-5 w-5 ${game.color}`} />
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-medium text-card-foreground">{game.name}</h4>
+                            <p className="text-sm text-muted-foreground">Best: {game.highScore}</p>
+                          </div>
+                          <Badge className="bg-accent-warm/20 text-accent-warm">
+                            {game.globalRank}
+                          </Badge>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+
+              {/* Global Health Ranking */}
+              <div>
+                <h3 className="text-xl font-semibold text-foreground mb-4">Global Health Ranking</h3>
+                <div className="space-y-3">
+                  {[
+                    {
+                      title: "Daily Steps",
+                      value: "12,450",
+                      unit: "steps",
+                      icon: Activity,
+                      rank: "#2,567",
+                      color: "text-accent-success",
+                      bgColor: "bg-accent-success/10"
+                    },
+                    {
+                      title: "Calories Burned",
+                      value: "2,840",
+                      unit: "kcal",
+                      icon: Zap,
+                      rank: "#1,890",
+                      color: "text-accent-warm",
+                      bgColor: "bg-accent-warm/10"
+                    },
+                    {
+                      title: "Sleep Duration",
+                      value: "7.5",
+                      unit: "hours",
+                      icon: Moon,
+                      rank: "#3,445",
+                      color: "text-primary",
+                      bgColor: "bg-primary/10"
+                    },
+                    {
+                      title: "Calories Intake",
+                      value: "1,950",
+                      unit: "kcal",
+                      icon: Coffee,
+                      rank: "#4,221",
+                      color: "text-purple-400",
+                      bgColor: "bg-purple-400/10"
+                    }
+                  ].map((metric, index) => (
+                    <Card key={index} className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass">
+                      <CardContent className="p-4">
+                        <div className="flex items-center gap-3">
+                          <div className={`w-10 h-10 rounded-lg ${metric.bgColor} flex items-center justify-center`}>
+                            <metric.icon className={`h-5 w-5 ${metric.color}`} />
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-medium text-card-foreground">{metric.title}</h4>
+                            <p className="text-sm text-muted-foreground">{metric.value} {metric.unit}</p>
+                          </div>
+                          <Badge className="bg-accent-success/20 text-accent-success">
+                            {metric.rank}
+                          </Badge>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+
+              {/* Global Focus Ranking */}
+              <div>
+                <h3 className="text-xl font-semibold text-foreground mb-4">Global Focus Ranking</h3>
+                <div className="space-y-3">
+                  <Card className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass">
+                    <CardContent className="p-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                          <Target className="h-5 w-5 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-medium text-card-foreground">Total Focus Time</h4>
+                          <p className="text-sm text-muted-foreground">245.5 hours</p>
+                        </div>
+                        <Badge className="bg-primary/20 text-primary">
+                          #856
+                        </Badge>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass">
+                    <CardContent className="p-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-lg bg-accent-warm/10 flex items-center justify-center">
+                          <Calendar className="h-5 w-5 text-accent-warm" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-medium text-card-foreground">Current Session</h4>
+                          <p className="text-sm text-muted-foreground">2.3 hours</p>
+                        </div>
+                        <Badge className="bg-accent-warm/20 text-accent-warm">
+                          #1,234
+                        </Badge>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass">
+                    <CardContent className="p-4 text-center">
+                      <div className="mb-3">
+                        <div className="w-16 h-16 mx-auto rounded-full bg-gradient-primary flex items-center justify-center mb-2">
+                          <Star className="h-8 w-8 text-primary-foreground" />
+                        </div>
+                        <h4 className="font-semibold text-card-foreground">Focus Master</h4>
+                        <p className="text-sm text-muted-foreground mb-3">Achievement Unlocked</p>
+                        <Badge className="bg-gradient-primary text-primary-foreground">
+                          Top 5% Globally
+                        </Badge>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
             </div>
           </TabsContent>
 
