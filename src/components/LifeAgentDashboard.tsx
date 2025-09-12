@@ -8,6 +8,63 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const LifeAgentDashboard = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
+  const [todoTasks, setTodoTasks] = useState([
+    {
+      icon: Target,
+      title: "11 AM to Trader Joe's",
+      status: "completed",
+      color: "text-primary"
+    },
+    {
+      icon: Coffee,
+      title: "3 PM Group meeting at Devoción",
+      status: "completed", 
+      color: "text-accent-warm"
+    },
+    {
+      icon: Heart,
+      title: "8 PM Jessica's breakup party",
+      status: "pending",
+      color: "text-red-400"
+    }
+  ]);
+  
+  const [healthTasks, setHealthTasks] = useState([
+    {
+      icon: Droplet,
+      title: "Swim 2000 meters",
+      status: "completed",
+      color: "text-blue-400"
+    },
+    {
+      icon: Coffee,
+      title: "Drink 8 cups of water",
+      status: "pending",
+      color: "text-cyan-400"
+    },
+    {
+      icon: Zap,
+      title: "1 hour Crossfit",
+      status: "pending",
+      color: "text-purple-400"
+    }
+  ]);
+
+  const toggleTaskStatus = (taskIndex: number, isHealthTask: boolean) => {
+    if (isHealthTask) {
+      setHealthTasks(prev => prev.map((task, index) => 
+        index === taskIndex 
+          ? { ...task, status: task.status === "completed" ? "pending" : "completed" }
+          : task
+      ));
+    } else {
+      setTodoTasks(prev => prev.map((task, index) => 
+        index === taskIndex 
+          ? { ...task, status: task.status === "completed" ? "pending" : "completed" }
+          : task
+      ));
+    }
+  };
 
   // AI问候语模块
   const AIGreeting = () => (
@@ -340,26 +397,7 @@ const LifeAgentDashboard = () => {
                 <div>
                   <h3 className="text-base font-medium text-foreground mb-3">TODO</h3>
                   <div className="space-y-2">
-                    {[
-                      {
-                        icon: Target,
-                        title: "11 AM to Trader Joe's",
-                        status: "completed",
-                        color: "text-primary"
-                      },
-                      {
-                        icon: Coffee,
-                        title: "3 PM Group meeting at Devoción",
-                        status: "completed", 
-                        color: "text-accent-warm"
-                      },
-                      {
-                        icon: Heart,
-                        title: "8 PM Jessica's breakup party",
-                        status: "pending",
-                        color: "text-red-400"
-                      }
-                    ].map((item, index) => (
+                    {todoTasks.map((item, index) => (
                       <Card key={index} className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass">
                         <CardContent className="p-3 flex items-center gap-3">
                           <div className={`w-8 h-8 rounded-lg bg-glass-subtle ${item.color} flex items-center justify-center flex-shrink-0`}>
@@ -370,7 +408,8 @@ const LifeAgentDashboard = () => {
                           </div>
                           <Badge 
                             variant={item.status === "completed" ? "default" : "secondary"}
-                            className={`text-xs ${item.status === "completed" ? "bg-accent-success/20 text-accent-success" : ""}`}
+                            className={`text-xs cursor-pointer transition-colors hover:opacity-80 ${item.status === "completed" ? "bg-accent-success/20 text-accent-success" : "hover:bg-primary/20 hover:text-primary"}`}
+                            onClick={() => toggleTaskStatus(index, false)}
                           >
                             {item.status === "completed" ? "Done" : "TBD"}
                           </Badge>
@@ -383,26 +422,7 @@ const LifeAgentDashboard = () => {
                 <div>
                   <h3 className="text-base font-medium text-foreground mb-3">Health</h3>
                   <div className="space-y-2">
-                    {[
-                      {
-                        icon: Droplet,
-                        title: "Swim 2000 meters",
-                        status: "completed",
-                        color: "text-blue-400"
-                      },
-                      {
-                        icon: Coffee,
-                        title: "Drink 8 cups of water",
-                        status: "pending",
-                        color: "text-cyan-400"
-                      },
-                      {
-                        icon: Zap,
-                        title: "1 hour Crossfit",
-                        status: "pending",
-                        color: "text-purple-400"
-                      }
-                    ].map((item, index) => (
+                    {healthTasks.map((item, index) => (
                       <Card key={index} className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass">
                         <CardContent className="p-3 flex items-center gap-3">
                           <div className={`w-8 h-8 rounded-lg bg-glass-subtle ${item.color} flex items-center justify-center flex-shrink-0`}>
@@ -413,7 +433,8 @@ const LifeAgentDashboard = () => {
                           </div>
                           <Badge 
                             variant={item.status === "completed" ? "default" : "secondary"}
-                            className={`text-xs ${item.status === "completed" ? "bg-accent-success/20 text-accent-success" : ""}`}
+                            className={`text-xs cursor-pointer transition-colors hover:opacity-80 ${item.status === "completed" ? "bg-accent-success/20 text-accent-success" : "hover:bg-primary/20 hover:text-primary"}`}
+                            onClick={() => toggleTaskStatus(index, true)}
                           >
                             {item.status === "completed" ? "Done" : "TBD"}
                           </Badge>
