@@ -107,67 +107,67 @@ const LifeAgentDashboard = () => {
   const AppCategories = () => {
     const categories = [
       {
-        title: "卡路里管理",
+        title: "Calorie Manager",
         icon: Zap,
         color: "text-accent-warm",
         bgColor: "bg-accent-warm/10",
-        apps: ["热量", "营养", "记录"]
+        apps: ["Calories", "Nutrition", "Tracking"]
       },
       {
-        title: "体重稳定器",
+        title: "Weight Stabilizer",
         icon: Activity,
         color: "text-accent-success",
         bgColor: "bg-accent-success/10",
-        apps: ["体重", "目标", "趋势"]
+        apps: ["Weight", "Goals", "Trends"]
       },
       {
-        title: "睡眠追踪",
+        title: "Sleep Tracker",
         icon: Moon,
         color: "text-primary",
         bgColor: "bg-primary/10",
-        apps: ["睡眠", "质量", "分析"]
+        apps: ["Sleep", "Quality", "Analysis"]
       },
       {
-        title: "控糖大师",
+        title: "Glucose Master",
         icon: Droplet,
         color: "text-accent-warning",
         bgColor: "bg-accent-warning/10",
-        apps: ["血糖", "监测", "提醒"]
+        apps: ["Blood Sugar", "Monitor", "Alerts"]
       },
       {
-        title: "时间管理",
+        title: "Time Management",
         icon: Calendar,
         color: "text-blue-400",
         bgColor: "bg-blue-400/10",
-        apps: ["计划", "专注", "效率"]
+        apps: ["Planning", "Focus", "Efficiency"]
       },
       {
-        title: "运势占卜",
+        title: "Fortune Teller",
         icon: Star,
         color: "text-purple-400",
         bgColor: "bg-purple-400/10",
-        apps: ["运势", "塔罗", "星座"]
+        apps: ["Fortune", "Tarot", "Astrology"]
       },
       {
-        title: "Widget专家",
+        title: "Widget Expert",
         icon: Grid3X3,
         color: "text-green-400",
         bgColor: "bg-green-400/10",
-        apps: ["小组件", "桌面", "自定义"]
+        apps: ["Widgets", "Desktop", "Custom"]
       },
       {
-        title: "文件转换",
+        title: "File Converter",
         icon: Target,
         color: "text-cyan-400",
         bgColor: "bg-cyan-400/10",
-        apps: ["格式", "转换", "工具"]
+        apps: ["Format", "Convert", "Tools"]
       },
       {
-        title: "学习不累",
+        title: "Study Buddy",
         icon: BookOpen,
         color: "text-red-400",
         bgColor: "bg-red-400/10",
-        apps: ["学习", "记忆", "方法"]
+        apps: ["Learning", "Memory", "Methods"]
       }
     ];
 
