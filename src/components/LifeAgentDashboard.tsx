@@ -723,14 +723,38 @@ const LifeAgentDashboard = () => {
 
               {/* Character Avatar */}
               <Card className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass">
-                <CardContent className="p-6">
-                  <div className="aspect-[3/4] bg-gradient-to-b from-accent-warm/10 to-background rounded-lg border border-glass-border flex items-center justify-center">
-                    <div className="h-32 w-32 rounded-full overflow-hidden ring-4 ring-accent-warm/20">
-                      <img 
-                        src="/character-avatar.png" 
-                        alt="Character Avatar"
-                        className="w-full h-full object-cover"
-                      />
+                <CardContent className="p-4">
+                  <div className="aspect-[2/3] bg-gradient-to-b from-accent-warm/5 to-background/50 rounded-lg border border-glass-border relative overflow-hidden">
+                    {/* Grid Pattern Background */}
+                    <div className="absolute inset-0 opacity-10">
+                      <div className="w-full h-full" style={{
+                        backgroundImage: `
+                          linear-gradient(rgba(255,107,53,0.2) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(255,107,53,0.2) 1px, transparent 1px)
+                        `,
+                        backgroundSize: '20px 20px'
+                      }}></div>
+                    </div>
+                    
+                    {/* Character with Breathing Effect */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="relative">
+                        {/* Breathing Glow Effect */}
+                        <div className="absolute inset-0 -m-4 bg-accent-warm/20 rounded-full blur-xl animate-pulse"></div>
+                        <div className="absolute inset-0 -m-2 bg-accent-warm/10 rounded-full blur-lg animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                        
+                        {/* Character Image */}
+                        <div className="relative w-32 h-48 animate-pulse">
+                          <img 
+                            src="/character-avatar.png" 
+                            alt="Character Avatar"
+                            className="w-full h-full object-contain drop-shadow-2xl"
+                            style={{
+                              filter: 'drop-shadow(0 0 20px rgba(255,107,53,0.3))'
+                            }}
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </CardContent>
