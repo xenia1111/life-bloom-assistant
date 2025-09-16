@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Bot, Calendar, Heart, Target, Gamepad2, Moon, Droplet, User, Activity, Coffee, BookOpen, Grid3X3, Palette, Hash, Puzzle, Zap, FlaskConical, Baby, Star, Sparkles, Pin, Shield, Camera, CreditCard, MapPin, Scale, Users, Settings, Smile, Book } from "lucide-react";
+import { Bot, Calendar, Heart, Target, Gamepad2, Moon, Droplet, User, Activity, Coffee, BookOpen, Grid3X3, Palette, Hash, Puzzle, Zap, FlaskConical, Baby, Star, Sparkles, Pin, Shield, Camera, CreditCard, MapPin, Scale, Users, Settings, Smile, Book, Repeat, Brain, TrendingUp } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -669,9 +669,13 @@ const LifeAgentDashboard = () => {
                 {[
                   { name: "Balanced", icon: Shield, active: false },
                   { name: "Health", icon: Heart, active: false },
-                  { name: "Learning", icon: Settings, active: false },
+                  { name: "Learning", icon: Brain, active: false },
                   { name: "Finance", icon: Star, active: true },
                   { name: "Emotion", icon: Smile, active: false },
+                  { name: "Entertainment", icon: Gamepad2, active: false },
+                  { name: "Habits", icon: Repeat, active: false },
+                  { name: "Efficiency", icon: TrendingUp, active: false },
+                  { name: "Social", icon: Users, active: false },
                 ].map((category, index) => (
                   <Card key={index} className={`flex-shrink-0 cursor-pointer transition-all duration-300 ${
                     category.active 
