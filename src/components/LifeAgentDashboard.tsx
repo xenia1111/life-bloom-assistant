@@ -704,18 +704,18 @@ const LifeAgentDashboard = () => {
               <Card className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Current Build Stats</h3>
-                  <div className="grid grid-cols-3 gap-4 text-center">
-                    <div>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="text-center">
                       <div className="text-2xl font-bold text-accent-warm mb-1">85</div>
                       <div className="text-sm text-muted-foreground">Financial IQ</div>
                     </div>
-                    <div>
+                    <div className="text-center">
                       <div className="text-2xl font-bold text-accent-warm mb-1">90</div>
                       <div className="text-sm text-muted-foreground">Investment</div>
                     </div>
-                    <div>
+                    <div className="text-center">
                       <div className="text-2xl font-bold text-accent-warm mb-1">2</div>
-                      <div className="text-sm text-muted-foreground">Finance Components</div>
+                      <div className="text-sm text-muted-foreground leading-tight">Finance<br />Components</div>
                     </div>
                   </div>
                 </CardContent>
