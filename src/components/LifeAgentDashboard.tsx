@@ -725,12 +725,13 @@ const LifeAgentDashboard = () => {
               <Card className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass">
                 <CardContent className="p-6">
                   <div className="aspect-[3/4] bg-gradient-to-b from-accent-warm/10 to-background rounded-lg border border-glass-border flex items-center justify-center">
-                    <Avatar className="h-32 w-32 ring-4 ring-accent-warm/20">
-                      <AvatarImage src="/lovable-uploads/df6a1543-d8f4-49ae-8e81-a4ecb8be5836.png" />
-                      <AvatarFallback className="bg-gradient-primary text-primary-foreground text-4xl">
-                        W
-                      </AvatarFallback>
-                    </Avatar>
+                    <div className="h-32 w-32 rounded-full overflow-hidden ring-4 ring-accent-warm/20">
+                      <img 
+                        src="/character-avatar.png" 
+                        alt="Character Avatar"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                 </CardContent>
               </Card>
