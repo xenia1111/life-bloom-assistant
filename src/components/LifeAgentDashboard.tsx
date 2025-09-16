@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Bot, Calendar, Heart, Target, Gamepad2, Moon, Droplet, User, Activity, Coffee, BookOpen, Grid3X3, Palette, Hash, Puzzle, Zap, FlaskConical, Baby, Star, Sparkles, Pin, Shield, Camera, CreditCard, MapPin, Scale } from "lucide-react";
+import { Bot, Calendar, Heart, Target, Gamepad2, Moon, Droplet, User, Activity, Coffee, BookOpen, Grid3X3, Palette, Hash, Puzzle, Zap, FlaskConical, Baby, Star, Sparkles, Pin, Shield, Camera, CreditCard, MapPin, Scale, Users, Settings, Smile, Book } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -346,12 +346,15 @@ const LifeAgentDashboard = () => {
     <div className="min-h-screen bg-gradient-background">
       <div className="container mx-auto px-4 py-4 max-w-md space-y-6">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-4 bg-glass-subtle backdrop-blur-glass border border-glass-border h-12">
+          <TabsList className="grid w-full grid-cols-5 bg-glass-subtle backdrop-blur-glass border border-glass-border h-12">
             <TabsTrigger value="dashboard" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-xs px-2">
               Home
             </TabsTrigger>
             <TabsTrigger value="entertainment" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-xs px-2">
               Games
+            </TabsTrigger>
+            <TabsTrigger value="equip" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-xs px-2">
+              Equip
             </TabsTrigger>
             <TabsTrigger value="health" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-xs px-2">
               Ranks
@@ -645,6 +648,131 @@ const LifeAgentDashboard = () => {
                     </CardContent>
                   </Card>
                 ))}
+              </div>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="equip" className="mt-6">
+            <div className="space-y-4">
+              {/* Equipment Chamber Header */}
+              <div className="text-center mb-6">
+                <Users className="h-10 w-10 mx-auto mb-3 text-accent-warm" />
+                <h2 className="text-xl font-semibold text-foreground mb-2">Equipment Chamber</h2>
+                <div className="flex items-center justify-center gap-2">
+                  <Star className="h-4 w-4 text-accent-warm" />
+                  <span className="text-sm text-accent-warm font-medium">Finance Build</span>
+                </div>
+              </div>
+
+              {/* Build Category Tabs */}
+              <div className="flex gap-2 overflow-x-auto pb-2">
+                {[
+                  { name: "Balanced", icon: Shield, active: false },
+                  { name: "Health", icon: Heart, active: false },
+                  { name: "Learning", icon: Settings, active: false },
+                  { name: "Finance", icon: Star, active: true },
+                  { name: "Emotion", icon: Smile, active: false },
+                ].map((category, index) => (
+                  <Card key={index} className={`flex-shrink-0 cursor-pointer transition-all duration-300 ${
+                    category.active 
+                      ? 'bg-accent-warm/20 border-accent-warm/30 shadow-glow' 
+                      : 'bg-gradient-glass backdrop-blur-glass border-glass-border hover:bg-accent-warm/10'
+                  }`}>
+                    <CardContent className="p-3 flex flex-col items-center gap-2 min-w-[80px]">
+                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                        category.active ? 'bg-accent-warm/30' : 'bg-glass-subtle'
+                      }`}>
+                        <category.icon className={`h-4 w-4 ${
+                          category.active ? 'text-accent-warm' : 'text-muted-foreground'
+                        }`} />
+                      </div>
+                      <span className={`text-xs font-medium ${
+                        category.active ? 'text-accent-warm' : 'text-muted-foreground'
+                      }`}>
+                        {category.name}
+                      </span>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              {/* Current Build Stats */}
+              <Card className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Current Build Stats</h3>
+                  <div className="grid grid-cols-3 gap-4 text-center">
+                    <div>
+                      <div className="text-2xl font-bold text-accent-warm mb-1">85</div>
+                      <div className="text-sm text-muted-foreground">Financial IQ</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-accent-warm mb-1">90</div>
+                      <div className="text-sm text-muted-foreground">Investment</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-accent-warm mb-1">2</div>
+                      <div className="text-sm text-muted-foreground">Finance Components</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Character Avatar */}
+              <Card className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass">
+                <CardContent className="p-6">
+                  <div className="aspect-[3/4] bg-gradient-to-b from-accent-warm/10 to-background rounded-lg border border-glass-border flex items-center justify-center">
+                    <Avatar className="h-32 w-32 ring-4 ring-accent-warm/20">
+                      <AvatarImage src="/lovable-uploads/df6a1543-d8f4-49ae-8e81-a4ecb8be5836.png" />
+                      <AvatarFallback className="bg-gradient-primary text-primary-foreground text-4xl">
+                        W
+                      </AvatarFallback>
+                    </Avatar>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Finance Components */}
+              <div>
+                <h3 className="text-lg font-semibold text-foreground mb-3 text-center">Finance Components</h3>
+                <p className="text-sm text-muted-foreground mb-4 text-center">2 components equipped</p>
+                
+                <div className="grid grid-cols-2 gap-3">
+                  {/* Budget Manager */}
+                  <Card className="bg-gradient-glass backdrop-blur-glass border-accent-warm/30 shadow-glow">
+                    <CardContent className="p-4 text-center">
+                      <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-accent-warm/20 flex items-center justify-center">
+                        <Zap className="h-6 w-6 text-accent-warm" />
+                      </div>
+                      <h4 className="font-semibold text-foreground mb-1 text-sm">Budget Manager</h4>
+                      <p className="text-xs text-accent-warm mb-1">Lv.2</p>
+                      <p className="text-xs text-muted-foreground">Finance</p>
+                    </CardContent>
+                  </Card>
+
+                  {/* Subscription Tracker */}
+                  <Card className="bg-gradient-glass backdrop-blur-glass border-purple-400/30 shadow-glow">
+                    <CardContent className="p-4 text-center">
+                      <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-purple-400/20 flex items-center justify-center">
+                        <Zap className="h-6 w-6 text-purple-400" />
+                      </div>
+                      <h4 className="font-semibold text-foreground mb-1 text-sm">Subscription Tracker</h4>
+                      <p className="text-xs text-purple-400 mb-1">Lv.1</p>
+                      <p className="text-xs text-muted-foreground">Finance</p>
+                    </CardContent>
+                  </Card>
+
+                  {/* Empty Slot */}
+                  <Card className="bg-gradient-glass backdrop-blur-glass border-glass-border border-dashed">
+                    <CardContent className="p-4 text-center">
+                      <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-glass-subtle flex items-center justify-center">
+                        <div className="w-6 h-6 rounded-full border-2 border-dashed border-muted-foreground/50 flex items-center justify-center">
+                          <span className="text-lg text-muted-foreground/50">+</span>
+                        </div>
+                      </div>
+                      <h4 className="font-medium text-muted-foreground text-sm">Equip Component</h4>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
             </div>
           </TabsContent>
