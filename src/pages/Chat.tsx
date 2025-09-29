@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import blueEyeIcon from "@/assets/blue-eye-icon.png";
 
 const Chat = () => {
   const [isRecording, setIsRecording] = useState(false);
@@ -92,7 +93,7 @@ const Chat = () => {
             <ArrowLeft className="h-5 w-5" />
           </Button>
           <Avatar className="h-10 w-10">
-            <AvatarImage src="/lovable-uploads/df6a1543-d8f4-49ae-8e81-a4ecb8be5836.png" />
+            <AvatarImage src={blueEyeIcon} alt="AI Assistant" />
             <AvatarFallback className="bg-muted">
               AI
             </AvatarFallback>
