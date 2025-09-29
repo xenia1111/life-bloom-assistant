@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Bot, Calendar, Heart, Target, Gamepad2, Moon, Droplet, User, Activity, Coffee, BookOpen, Grid3X3, Palette, Hash, Puzzle, Zap, FlaskConical, Baby, Star, Sparkles, Pin, Shield, Camera, CreditCard, MapPin, Scale } from "lucide-react";
+import { Bot, Calendar, Heart, Target, Gamepad2, Moon, Droplet, User, Activity, Coffee, BookOpen, Grid3X3, Palette, Hash, Puzzle, Zap, FlaskConical, Baby, Star, Sparkles, Pin, Shield, Camera, CreditCard, MapPin, Scale, MessageCircle } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -383,6 +383,23 @@ const LifeAgentDashboard = () => {
                       Accidentally woke up 5 mins early, but ngl I feel unstoppable rn 😎☀️
                     </p>
                   </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            {/* 聊天入口 */}
+            <Card className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass hover:shadow-glow transition-all duration-300 cursor-pointer group" 
+                  onClick={() => window.location.href = '/chat'}>
+              <CardContent className="p-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                    <MessageCircle className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-foreground">AI Chat Assistant</h3>
+                    <p className="text-sm text-muted-foreground">Start a conversation with voice, text, or images</p>
+                  </div>
+                  <div className="w-2 h-2 bg-accent-success rounded-full animate-pulse" />
                 </div>
               </CardContent>
             </Card>
