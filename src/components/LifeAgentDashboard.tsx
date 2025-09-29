@@ -343,7 +343,7 @@ const LifeAgentDashboard = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-background">
+    <div className="min-h-screen bg-gradient-background relative">
       <div className="container mx-auto px-4 py-4 max-w-md space-y-6">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-4 bg-glass-subtle backdrop-blur-glass border border-glass-border h-12">
@@ -383,23 +383,6 @@ const LifeAgentDashboard = () => {
                       Accidentally woke up 5 mins early, but ngl I feel unstoppable rn 😎☀️
                     </p>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-            
-            {/* 聊天入口 */}
-            <Card className="bg-gradient-glass backdrop-blur-glass border-glass-border shadow-glass hover:shadow-glow transition-all duration-300 cursor-pointer group" 
-                  onClick={() => window.location.href = '/chat'}>
-              <CardContent className="p-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                    <MessageCircle className="h-6 w-6 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-foreground">AI Chat Assistant</h3>
-                    <p className="text-sm text-muted-foreground">Start a conversation with voice, text, or images</p>
-                  </div>
-                  <div className="w-2 h-2 bg-accent-success rounded-full animate-pulse" />
                 </div>
               </CardContent>
             </Card>
@@ -883,6 +866,18 @@ const LifeAgentDashboard = () => {
           </TabsContent>
         </Tabs>
       </div>
+      
+      {/* 浮动聊天按钮 - 仅在Home页显示 */}
+      {activeTab === "dashboard" && (
+        <Button
+          onClick={() => window.location.href = '/chat'}
+          className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 z-50 group"
+          size="icon"
+        >
+          <MessageCircle className="h-6 w-6 text-primary-foreground group-hover:scale-110 transition-transform" />
+          <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent-success rounded-full animate-pulse" />
+        </Button>
+      )}
     </div>
   );
 };
