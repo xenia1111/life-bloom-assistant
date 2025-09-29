@@ -198,7 +198,7 @@ const Chat = () => {
             <Input
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              placeholder="Type a message..."
+              placeholder="I love to hear whatever you say..."
               className="rounded-full bg-muted border-0 pr-12 h-12"
               onKeyPress={(e) => {
                 if (e.key === "Enter" && !e.shiftKey) {
