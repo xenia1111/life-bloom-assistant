@@ -12,32 +12,26 @@ const Chat = () => {
     {
       id: 1,
       type: "ai",
-      content: "记录饮食时多说些细节，让推荐更准确哦！",
-      timestamp: new Date().toLocaleTimeString()
+      content: "8点啦，下面将由Monster 和你一起来概览一下今天吧",
+      timestamp: "08:00"
     },
     {
       id: 2,
-      type: "user", 
-      content: "我吃了一碗豆腐汤面",
-      timestamp: "13:41"
+      type: "ai",
+      content: "Monster 为你点了一首Here for it All，一起用音乐来激活一下今天吧",
+      timestamp: "08:00",
+      isMusic: true,
+      musicData: {
+        title: "Here for it All",
+        artist: "Monster",
+        duration: "3:42"
+      }
     },
     {
       id: 3,
-      type: "ai",
-      content: "主人今天的第一餐是暖暖的豆腐汤面呀！(◐∀◐) 面条提供碳水能量，豆腐补充优质蛋白，特别适合减脂期呢～不过要注意汤底盐分控制哦，咸香口味可以加点木耳或青菜平衡营养！需要帮您估算这碗面的具体热量吗 □",
-      timestamp: "13:41"
-    },
-    {
-      id: 4,
-      type: "user",
-      content: "这碗豆腐汤面大概多少卡路里",
-      timestamp: "13:41"
-    },
-    {
-      id: 5,
-      type: "ai", 
-      content: "根据常见做法，一碗豆腐汤面大约400-500大卡呢！你之前记录的500卡很准确呢～减脂期可以搭配更多蔬菜增加饱腹感(ó﹏ò)↑♢",
-      timestamp: "13:41"
+      type: "user", 
+      content: "Alright, I'm ready for the day!",
+      timestamp: "08:01"
     }
   ]);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -121,23 +115,40 @@ const Chat = () => {
             key={msg.id}
             className={`flex ${msg.type === "user" ? "justify-end" : "justify-start"}`}
           >
-            <div className={`max-w-[80%] ${msg.type === "user" ? "" : "flex gap-3"}`}>
-              {msg.type === "ai" && (
+            <div className={`max-w-[80%] ${msg.type === "ai" ? "" : "flex gap-3"}`}>
+              {msg.type === "user" && (
                 <Avatar className="h-8 w-8 mt-2">
                   <AvatarImage src="/lovable-uploads/df6a1543-d8f4-49ae-8e81-a4ecb8be5836.png" />
-                  <AvatarFallback className="bg-muted text-xs">AI</AvatarFallback>
+                  <AvatarFallback className="bg-muted text-xs">U</AvatarFallback>
                 </Avatar>
               )}
               <div className="flex flex-col">
-                <div
-                  className={`px-4 py-3 rounded-2xl ${
-                    msg.type === "user"
-                      ? "bg-foreground text-background rounded-br-md"
-                      : "bg-muted text-foreground rounded-bl-md"
-                  }`}
-                >
-                  <p className="text-sm leading-relaxed">{msg.content}</p>
-                </div>
+                {msg.isMusic ? (
+                  <div className="bg-card border border-border rounded-2xl p-4 max-w-xs">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                        <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-medium text-sm">{msg.musicData?.title}</p>
+                        <p className="text-xs text-muted-foreground">{msg.musicData?.artist}</p>
+                        <p className="text-xs text-muted-foreground">{msg.musicData?.duration}</p>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    className={`px-4 py-3 rounded-2xl ${
+                      msg.type === "user"
+                        ? "bg-primary text-primary-foreground rounded-br-md"
+                        : "bg-muted text-foreground rounded-bl-md"
+                    }`}
+                  >
+                    <p className="text-sm leading-relaxed">{msg.content}</p>
+                  </div>
+                )}
                 <p className="text-xs text-muted-foreground mt-1 px-2">
                   {msg.timestamp}
                 </p>
