@@ -131,7 +131,7 @@ const Chat = () => {
               )}
               <div className="flex flex-col">
                 {msg.isMusic ? (
-                  <div className="bg-card border border-border rounded-2xl p-4 max-w-xs">
+                  <div className="bg-card border border-border rounded-2xl p-4 max-w-xs shadow-sm">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
                         <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
@@ -147,10 +147,10 @@ const Chat = () => {
                   </div>
                 ) : (
                   <div
-                    className={`px-4 py-3 rounded-2xl ${
+                    className={`px-4 py-3 rounded-2xl border shadow-sm ${
                       msg.type === "user"
-                        ? "bg-primary text-primary-foreground rounded-br-md"
-                        : "bg-muted text-foreground rounded-bl-md"
+                        ? "bg-primary text-primary-foreground border-primary/20 rounded-br-md"
+                        : "bg-card text-foreground border-border rounded-bl-md"
                     }`}
                   >
                     <p className="text-sm leading-relaxed">{msg.content}</p>
