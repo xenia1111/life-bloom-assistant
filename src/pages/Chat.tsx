@@ -162,16 +162,18 @@ const Chat = () => {
 
       {/* Quick Actions */}
       <div className="p-4 bg-background border-t border-border">
-        <div className="flex gap-2 mb-4 overflow-x-auto">
-          <Button variant="outline" className="flex-shrink-0 rounded-full">
-            📷 Image Recognition
-          </Button>
-          <Button variant="outline" className="flex-shrink-0 rounded-full">
-            📊 Health Status
-          </Button>
-          <Button variant="outline" className="flex-shrink-0 rounded-full">
-            📋 Nutrition Library
-          </Button>
+        <div className="flex gap-2 mb-4 overflow-x-auto scrollbar-hide">
+          <div className="flex gap-2 min-w-max">
+            <Button variant="outline" className="flex-shrink-0 rounded-full whitespace-nowrap">
+              📷 Image Recognition
+            </Button>
+            <Button variant="outline" className="flex-shrink-0 rounded-full whitespace-nowrap">
+              📊 Health Status
+            </Button>
+            <Button variant="outline" className="flex-shrink-0 rounded-full whitespace-nowrap">
+              📋 Nutrition Library
+            </Button>
+          </div>
         </div>
 
         {/* Input Area */}
