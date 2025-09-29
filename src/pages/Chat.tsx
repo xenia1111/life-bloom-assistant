@@ -143,7 +143,7 @@ const Chat = () => {
                     className={`px-4 py-3 rounded-2xl ${
                       msg.type === "user"
                         ? "bg-primary text-primary-foreground rounded-br-md"
-                        : "bg-muted text-foreground rounded-bl-md"
+                        : "bg-foreground text-background rounded-bl-md"
                     }`}
                   >
                     <p className="text-sm leading-relaxed">{msg.content}</p>
