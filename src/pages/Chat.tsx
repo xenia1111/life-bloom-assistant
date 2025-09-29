@@ -116,7 +116,13 @@ const Chat = () => {
             key={msg.id}
             className={`flex ${msg.type === "user" ? "justify-end" : "justify-start"}`}
           >
-            <div className={`max-w-[80%] ${msg.type === "ai" ? "" : "flex gap-3 flex-row-reverse"}`}>
+            <div className={`max-w-[80%] ${msg.type === "ai" ? "flex gap-3" : "flex gap-3 flex-row-reverse"}`}>
+              {msg.type === "ai" && (
+                <Avatar className="h-8 w-8 mt-2">
+                  <AvatarImage src={blueEyeIcon} alt="AI Assistant" />
+                  <AvatarFallback className="bg-muted text-xs">AI</AvatarFallback>
+                </Avatar>
+              )}
               {msg.type === "user" && (
                 <Avatar className="h-8 w-8 mt-2">
                   <AvatarImage src="/lovable-uploads/df6a1543-d8f4-49ae-8e81-a4ecb8be5836.png" />
