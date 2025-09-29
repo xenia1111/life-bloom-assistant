@@ -115,7 +115,7 @@ const Chat = () => {
             key={msg.id}
             className={`flex ${msg.type === "user" ? "justify-end" : "justify-start"}`}
           >
-            <div className={`max-w-[80%] ${msg.type === "ai" ? "" : "flex gap-3"}`}>
+            <div className={`max-w-[80%] ${msg.type === "ai" ? "" : "flex gap-3 flex-row-reverse"}`}>
               {msg.type === "user" && (
                 <Avatar className="h-8 w-8 mt-2">
                   <AvatarImage src="/lovable-uploads/df6a1543-d8f4-49ae-8e81-a4ecb8be5836.png" />
@@ -149,7 +149,9 @@ const Chat = () => {
                     <p className="text-sm leading-relaxed">{msg.content}</p>
                   </div>
                 )}
-                <p className="text-xs text-muted-foreground mt-1 px-2">
+                <p className={`text-xs text-muted-foreground mt-1 px-2 ${
+                  msg.type === "user" ? "text-right" : ""
+                }`}>
                   {msg.timestamp}
                 </p>
               </div>
