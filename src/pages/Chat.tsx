@@ -12,13 +12,13 @@ const Chat = () => {
     {
       id: 1,
       type: "ai",
-      content: "8点啦，下面将由Monster 和你一起来概览一下今天吧",
+      content: "It's 8 o'clock, Monster will now give you an overview of today",
       timestamp: "08:00"
     },
     {
       id: 2,
       type: "ai",
-      content: "Monster 为你点了一首Here for it All，一起用音乐来激活一下今天吧",
+      content: "Monster has picked 'Here for it All' for you, let's activate today with music",
       timestamp: "08:00",
       isMusic: true,
       musicData: {
@@ -54,7 +54,7 @@ const Chat = () => {
       const aiResponse = {
         id: messages.length + 2,
         type: "ai",
-        content: "我明白了你的消息。还有什么其他需要帮助的吗？",
+        content: "I understand your message. Is there anything else I can help you with?",
         timestamp: new Date().toLocaleTimeString()
       };
       setMessages(prev => [...prev, aiResponse]);
@@ -164,13 +164,13 @@ const Chat = () => {
       <div className="p-4 bg-background border-t border-border">
         <div className="flex gap-2 mb-4 overflow-x-auto">
           <Button variant="outline" className="flex-shrink-0 rounded-full">
-            📷 图片识别
+            📷 Image Recognition
           </Button>
           <Button variant="outline" className="flex-shrink-0 rounded-full">
-            📊 营养报告
+            📊 Health Status
           </Button>
           <Button variant="outline" className="flex-shrink-0 rounded-full">
-            📋 推荐食谱
+            📋 Nutrition Library
           </Button>
         </div>
 
@@ -189,7 +189,7 @@ const Chat = () => {
             <Input
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              placeholder="输入消息..."
+              placeholder="Type a message..."
               className="rounded-full bg-muted border-0 pr-12 h-12"
               onKeyPress={(e) => {
                 if (e.key === "Enter" && !e.shiftKey) {
